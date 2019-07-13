@@ -15,8 +15,8 @@
       </style> */
 
       /* on a correct answer */
-      /* lastResult.style.backgroundColor = 'green'; */
+      lastResult.style.backgroundColor = 'green';
       /* on an incorrect answer */
-      /* lastResult.style.backgroundColor = 'red'; */
+      lastResult.style.backgroundColor = 'red';
       /* on reset game function */
-      /* lastResult.style.backgroundColor = 'white'; */
+      lastResult.style.backgroundColor = 'white';
