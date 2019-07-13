@@ -1,0 +1,22 @@
+/* <style>
+        html {
+          font-family: sans-serif;
+        }
+        body {
+          width: 50%;
+          max-width: 800px;
+          min-width: 480px;
+          margin: 0 auto;
+        }
+        .lastResult {
+          color: white;
+          padding: 3px;
+        }
+      </style> */
+
+      /* on a correct answer */
+      /* lastResult.style.backgroundColor = 'green'; */
+      /* on an incorrect answer */
+      /* lastResult.style.backgroundColor = 'red'; */
+      /* on reset game function */
+      /* lastResult.style.backgroundColor = 'white'; */
