@@ -29,7 +29,8 @@
 <body>
     <h1>Number guessing game</h1>
 
-    <p>As a Padawan learner, you have been selected for a test of your psychic force abilities. The Jedi Council has selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you
+    <p>As a Padawan learner, you have been selected for a test of your psychic force abilities. The Jedi Council has
+        selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you
         if your guess was too high or too low.</p>
 
     <!-- Form for the user to input their answer -->
@@ -114,30 +115,30 @@
         // Puts the guessCount back down to 1.
         function resetGame() {
             guessCount = 1;
-    // Empties all the text out of the information paragraphs.
+            // Empties all the text out of the information paragraphs.
             const resetParas = document.querySelectorAll('.resultParas p');
             for (let i = 0; i < resetParas.length; i++) {
                 resetParas[i].textContent = '';
             }
-        // Removes the reset button from our code.
+            // Removes the reset button from our code.
             resetButton.parentNode.removeChild(resetButton);
-        // Enables the form elements, and empties and focuses the text field, ready for a new guess to be entered.
+            // Enables the form elements, and empties and focuses the text field, ready for a new guess to be entered.
             guessField.disabled = false;
             guessSubmit.disabled = false;
             guessField.value = '';
             guessField.focus();
-    // Removes the background color from the lastResult paragraph.
+            // Removes the background color from the lastResult paragraph.
             // lastResult.style.backgroundColor = 'white';
 
-     // Generates a new random number so that you are not just guessing the same number again!
+            // Generates a new random number so that you are not just guessing the same number again!
             randomNumber = Math.floor(Math.random() * 100) + 1;
         }
 
-    
 
 
-    
-   
+
+
+
 
 
     </script>
