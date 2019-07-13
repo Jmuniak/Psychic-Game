@@ -1,17 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="./assets/javascript/game.js"></script>
-    <title>First JavaScript Game</title>
+    <link type="text/stylesheet" href="./assets/css/style.css"></link>
+    <link type="text/stylesheet" href="./assets/css/reset.css"></link>
+    <!-- Need to use images for some of the divs and what not. -->
+    <!-- <link type="text/stylesheet" href="./assets/images/guessSubmit"></link> -->
+    <script src="./assets/javascript/game.js" defer></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <title>Psychic-Game</title>
+
 </head>
+
 <body>
-    <!-- Game header/logo -->
+    <h1>Number guessing game</h1>
 
-    <!--  -->
+    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you
+        if your guess was too high or too low.</p>
 
+    <!-- Form for the user to input their answer -->
+    <div class="form">
+        <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Submit guess" class="guessSubmit">
+    </div>
+    <!-- Scoreboard -->
+    <div class="resultParas">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+    </div>
+
+    <script>
+        // JavaScript goes here
+
+        // vars and constants
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        const guesses = document.querySelector('.guesses');
+        const lastResult = document.querySelector('.lastResult');
+        const lowOrHi = document.querySelector('.lowOrHi');
+
+        const guessSubmit = document.querySelector('.guessSubmit');
+        const guessField = document.querySelector('.guessField');
+
+        let guessCount = 1;
+        let resetButton;
+
+
+        // Creating a function to check the user's guess input
+        function guessCheck() {
+            let userGuess = Number(guessField.value);
+            if (guessCount === 1) {
+                guesses.textContent = 'Previous guesses: ';
+            }
+            guesses.textContent += userGuess + ' ';
+            // checking for a win condition
+            if (userGuess === randomNumber) {
+                lastResult.textContent = 'Wow you\'re a psychic! Are you a Jedi? You should play again!';
+                // lastResult.style.backgroundColor = 'green';
+                lowOrHi.textContent += ' ';
+                setGameOver();
+                // checking for guessCount for a loss condition
+            }
+            else if (guessCount = 10) {
+                lastResult.textContent = 'You\'re not a Jedi master yet. Try again Padawan!';
+                setGameOver();
+            }
+            else {
+                lastResult.textContent = 'Incorrect!';
+                // lastResult.style.backgroundColor = 'red';
+                if (userGuess < randomNumber) {
+                    lowOrHi.textContent = 'Last guess was too low!';
+                }
+                else if (userGuess > randomNumber) {
+                    lowOrHi.textContent = 'Last guess was too high!';
+                }
+            }
+            // Increase the guess Counter, resets the guessing field.
+            guessCount++;
+            guessField.value = '';
+            // Focus sets the element as the active element in the current document. 
+            guessField.focus();
+        }
+
+    </script>
 
 </body>
+
 </html>
