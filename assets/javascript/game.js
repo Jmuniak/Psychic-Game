@@ -23,36 +23,6 @@ function guessCheck() {
     if (guessCount === 1) {
         guesses.textContent = 'Previous guesses: ';
             }
-<<<<<<< HEAD
-            guesses.textContent += userGuess + ', ';
-            // checking for a win condition
-            if (userGuess === randomNumber) {
-                lastResult.textContent = 'Wow you\'re a psychic! Are you a Jedi? You should play again!';
-                lastResult.style.backgroundColor = 'lightgreen';
-                lowOrHi.textContent = '';
-                setGameOver();
-                // checking for guessCount for a loss condition
-            }
-            else if (guessCount === 10) {
-                lastResult.textContent = 'You\'re not a Jedi master yet. Try again Padawan!';
-                setGameOver();
-            }
-            else {
-                lastResult.textContent = 'Incorrect!';
-                lastResult.style.backgroundColor = 'orange';
-                if (userGuess < randomNumber) {
-                    lowOrHi.textContent = 'Last guess was too low!';
-                }
-                else if (userGuess > randomNumber) {
-                    lowOrHi.textContent = 'Last guess was too high!';
-                }
-            }
-            // Increase the guess Counter, resets the guessing field.
-            guessCount++;
-            guessField.value = '';
-            // Focus sets the element as the active element in the current document. 
-            guessField.focus();
-=======
     guesses.textContent += userGuess + ', ';
     // checking for a win condition
     if (userGuess === randomNumber) {
@@ -71,7 +41,6 @@ function guessCheck() {
         lastResult.style.backgroundColor = 'orange';
         if (userGuess < randomNumber) {
             lowOrHi.textContent = 'Last guess was too low!';
->>>>>>> 1dc443175e343900f61388cb6a170bcbc76167b9
         }
         else if (userGuess > randomNumber) {
             lowOrHi.textContent = 'Last guess was too high!';
@@ -89,25 +58,6 @@ function guessCheck() {
 // Adding events
 guessSubmit.addEventListener('click', guessCheck);
 
-<<<<<<< HEAD
-        // Puts the guessCount back down to 1.
-        function resetGame() {
-            guessCount = 1;
-            // Empties all the text out of the information paragraphs.
-            const resetParas = document.querySelectorAll('.resultParas p');
-            for (let i = 0; i < resetParas.length; i++) {
-                resetParas[i].textContent = '';
-            }
-            // Removes the reset button from our code.
-            resetButton.parentNode.removeChild(resetButton);
-            // Enables the form elements, and empties and focuses the text field, ready for a new guess to be entered.
-            guessField.disabled = false;
-            guessSubmit.disabled = false;
-            guessField.value = '';
-            guessField.focus();
-            // Removes the background color from the lastResult paragraph.
-            lastResult.style.backgroundColor = 'white';
-=======
 // Game over Event
 function setGameOver() {
     guessField.disabled = true;
@@ -138,7 +88,6 @@ function resetGame() {
     guessField.focus();
     // Removes the background color from the lastResult paragraph.
     lastResult.style.backgroundColor = 'white';
->>>>>>> 1dc443175e343900f61388cb6a170bcbc76167b9
 
     // Generates a new random number so that you are not just guessing the same number again!
     randomNumber = Math.floor(Math.random() * 100) + 1;
