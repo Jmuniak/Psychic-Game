@@ -72,7 +72,8 @@ function setGameOver() {
 // Puts the guessCount back down to 1.
 function resetGame() {
     guessCount = 1;
-    remainingGuesses = 10;
+    remainingResults = 10;
+    $(".remainingResults").text("Remaining Guesses: " + remainingResults);
     // Empties all the text out of the information paragraphs.
     const resetParas = document.querySelectorAll('.resultParas p');
     for (let i = 0; i < resetParas.length; i++) {
