@@ -26,10 +26,11 @@ p {
 div.form, div.remainingGuesses, div.resultParas {
   text-align: center;
 }
+
 /* .resetButton {
   ........ not centering
 } */
-.guessField {
+/* .guessField {
 }
 .guessSubmit {
 }
@@ -40,4 +41,4 @@ div.form, div.remainingGuesses, div.resultParas {
 .lastResult {
 }
 .lowOrHi {
-}
+} */
