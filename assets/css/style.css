@@ -8,6 +8,7 @@ body {
   min-width: 480px;
   margin: 0 auto;
 }
+
 .pageHeader {
   margin: 30px 30px;
   padding: 30px;
@@ -20,22 +21,19 @@ body {
 
 p {
   text-align: center;
-
 }
 
-
-
-.form {
+div.form, div.remainingGuesses, div.resultParas {
+  text-align: center;
 }
+/* .resetButton {
+  ........ not centering
+} */
 .guessField {
 }
 .guessSubmit {
 }
-.remainingGuesses {
-}
 .remainingResults {
-}
-.resultParas {
 }
 .guesses {
 }
