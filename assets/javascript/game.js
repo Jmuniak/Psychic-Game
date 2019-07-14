@@ -26,7 +26,7 @@
             // checking for a win condition
             if (userGuess === randomNumber) {
                 lastResult.textContent = 'Wow you\'re a psychic! Are you a Jedi? You should play again!';
-                // lastResult.style.backgroundColor = 'green';
+                lastResult.style.backgroundColor = 'lightgreen';
                 lowOrHi.textContent = '';
                 setGameOver();
                 // checking for guessCount for a loss condition
@@ -37,7 +37,7 @@
             }
             else {
                 lastResult.textContent = 'Incorrect!';
-                // lastResult.style.backgroundColor = 'red';
+                lastResult.style.backgroundColor = 'orange';
                 if (userGuess < randomNumber) {
                     lowOrHi.textContent = 'Last guess was too low!';
                 }
@@ -81,7 +81,7 @@
             guessField.value = '';
             guessField.focus();
             // Removes the background color from the lastResult paragraph.
-            // lastResult.style.backgroundColor = 'white';
+            lastResult.style.backgroundColor = 'white';
 
             // Generates a new random number so that you are not just guessing the same number again!
             randomNumber = Math.floor(Math.random() * 100) + 1;
