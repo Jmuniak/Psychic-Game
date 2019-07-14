@@ -9,8 +9,8 @@
     </link>
     <link type="text/stylesheet" href="./assets/css/reset.css">
     </link>
-    <!-- Need to use images for some of the divs and what not. -->
-    <!-- <link type="text/stylesheet" href="./assets/images/guessSubmit"></link> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="./assets/javascript/game.js" defer></script>
 
     <title>Psychic-Game</title>
@@ -30,13 +30,17 @@
         <input type="submit" value="Submit guess" class="guessSubmit">
     </div>
     <!-- Scoreboard -->
+    <!-- Working on a remainingResult counter -->
+    <div class="remainingGuesses">
+        <p class="remainingResults">Remaining Guesses: 10</p>
+    </div>
     <div class="resultParas">
         <p class="guesses"></p>
         <p class="lastResult"></p>
         <p class="lowOrHi"></p>
     </div>
 
-    
+
 
 </body>
 
